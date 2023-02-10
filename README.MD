@@ -1,45 +1,33 @@
-# Social-STGCNN: A Social Spatio-Temporal Graph Convolutional Neural Network for Human Trajectory Prediction
-### Abduallah Mohamed, Kun Qian <br />
-### Mohamed Elhoseiny** , Christian Claudel**
-##### <sup>**</sup> Equal advising
-Read full paper <a href="https://arxiv.org/abs/2002.11927">here</a>, Presented at [CVPR 2020](http://cvpr2020.thecvf.com/)
+# At-VD-GCN:Trajectory Forecasting with Graph Convolutional Neural Net-works Based on Prior-Aware and Information Fusion
+### Yzz <br />
 
-### Social-STGCNN
+### At-VD-GCN
 <div align='center'>
-<img src="images/Social-STGCNN-Teaser_.jpg"></img>
+<img src="images.png"></img>
 </div>
 <br />
 
-We propose the Social Spatio-Temporal Graph Convolutional Neural Network (Social-STGCNN), which models the problem of human trajectory prediction as a spatio-temporal graph. Our results show an improvement over the state of art by 20\% on the Final Displacement Error (FDE) and an improvement on the Average Displacement Error (ADE) with 8.5 times less parameters and up to 48 times faster inference speed than previously reported methods. In addition, our model is data efficient, and exceeds previous state of the art on the ADE metric with only 20\% of the training data. We propose a kernel function to embed the social interactions between pedestrians within the adjacency matrix.
+We propose a pedestrian trajectory prediction model based on prior-aware and information fusion. To make the input information more effective, for the different importance of the input trajectory information, we design the time information weighting module to weigh the observed trajectory information differently at different moments based on the original observed trajectory infor-mation. To reduce the impact of redundant information on trajectory prediction and to improve the interaction between pedestrians, we present a spatial interaction module of multi-pedestrians and a topological graph fusion module. In addition, we use a temporal convolutional network module to obtain the temporal interactions between pedestrians. Compared to Social-STGCNN, the ex-perimental results show that the model we proposed reduces the average displacement error (ADE) and final displacement error (FDE) by 32% and 38% on the datasets of ETH and UCY, respectively. Moreover, based on this model, we design an autonomous driving obstacle avoidance system that can ensure the safety of road pedestrians effectively.
 
-Our model inference speed is 0.002s/frame (500Hz) using only 7.6K parameters.
+Our model inference speed is 0.0014s/frame (714Hz) using only 6.16K parameters.
 ### Citaion
 You can cite our paper using: 
 ```
 @inproceedings{mohamed2020social,
-  title={Social-STGCNN: A Social Spatio-Temporal Graph Convolutional Neural Network for Human Trajectory Prediction},
-  author={Mohamed, Abduallah and Qian, Kun and Elhoseiny, Mohamed and Claudel, Christian},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={14424--14432},
-  year={2020}
+  title={At-VD-GCN:Trajectory Forecasting with Graph Convolutional Neural Net-works Based on Prior-Aware and Information Fusion},
+  author={Yzz},
+  booktitle={--},
+  pages={--},
+  year={2023}
 }
 ```
 
 
 #### Model
 <div align='center'>
-<img src="images/social-stgcnn-model.jpg"></img>
+<img src="images.png"></img>
 </div>
 <br />
-Social-STGCNN model consists of 2 building blocks: <br />
-1- ST-GCNN: A Spatio-Tempral Graph CNN that creates a spatio-temporal graph embedding representing the previous pedestrians trajectories. <br />
-2- TXP-CNN: A Time-Extrapolator CNN that utilizes the spatio-temporal graph embedding to predict future trajectories.<br />
-
-More details are in this description video:<br /> 
-<div align='center'>
-  
-[![Social-STGCNN description](https://img.youtube.com/vi/Yi9rVHJM8WY/0.jpg)](https://www.youtube.com/watch?v=Yi9rVHJM8WY)
-</div>
 
 #### Predictions sample
 
